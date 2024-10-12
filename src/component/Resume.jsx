@@ -18,14 +18,19 @@ export default function Resume() {
             <div className="flex aos-init aos-animate">
                 <div className='ResumeItemLeft w-1/2'>
                     {
-                        resumeEducation && resumeEducation.map((item,index) => (
-                            <ResumeTitle key={index} resumeTitle={item.resumeTitle}>
-                                <ResumeItem 
-                                    resumeSubTitle={item.resumeSubTitle}
-                                    period={item.period} 
-                                    adress={item.adress}
-                                    description={item.description} 
-                                    tasks={item.tasks}/>
+                        resumeEducation && resumeEducation.map((entry,index) => (
+                            <ResumeTitle key={index} resumeTitle={entry.resumeTitle}>
+                                {
+                                    entry.entries.map(item=>
+                                        <ResumeItem 
+                                            resumeSubTitle={item.resumeSubTitle}
+                                            period={item.period} 
+                                            adress={item.adress}
+                                            description={item.description} 
+                                            tasks={item.tasks}/>
+                                    )
+                                }
+                                
                             </ResumeTitle>
                         ))
                     }
