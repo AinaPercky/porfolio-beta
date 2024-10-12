@@ -1,16 +1,18 @@
 import React from 'react'
 
 
-export default function ResumeItem() {
+export default function ResumeItem(props) {
     return (
             <div className="resume-item pb-0">
-                <h4>Brandon Johnson</h4>
-                <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
-                <ul className='list-disc'>
-                    <li>Portland par 127,Orlando, FL</li>
-                    <li>(123) 456-7891</li>
-                    <li>alice.barkley@example.com</li>
-                </ul>
+                <h4>{props.resumeSubTitle}</h4>
+                {props.period?<h5>{props.period}</h5>:null}
+                {props.adress?<p><em>{props.adress}</em></p>:null}
+                {props.description?<p>{props.description}</p>:null}
+                {props.tasks?
+                    <ul className='list-disc'>
+                    {props.tasks.map((item)=><li>{item.task}</li>)}
+                </ul>:null
+                }
             </div>
 
     )
