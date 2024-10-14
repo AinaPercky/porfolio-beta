@@ -6,7 +6,7 @@ export default function ResumeItem(props) {
             <div className="resume-item pb-0">
                 <h4>{props.resumeSubTitle}</h4>
                 {props.period?<h5>{props.period}</h5>:null}
-                {props.adress?<p><em>{props.adress}</em></p>:null}
+                {props.adress?<p className='mb-3'><em>{props.adress}</em></p>:null}
                 {props.description?<p>{props.description}</p>:null}
                 {props.tasks?
                     <ul className='list-disc'>

@@ -1,36 +1,39 @@
 export const resumeExperience=[
     {
         resumeTitle:'Professional experience',
-        resumeSubTitle:'Web developper',
-        period:'2007-2008',
-        adress:'Hospital Center of Soavinandriana',
-        tasks:[
+        entries:[
             {
-                task:'Front End Development'
+                resumeSubTitle:'Full stack developper',
+                period:'2022-2023',
+                adress:'Soavinandriana, Antananarivo',
+                tasks:[
+                    {
+                        task:'Front end development'
+                    },
+                    {
+                        task:'Back end development'
+                    },
+                    {
+                        task:'Bug fixing'
+                    },
+                ]
             },
             {
-                task:'Back End Development'
-            },
-            {
-                task:'Bug fixing'
-            },
-        ]
-    },
-    {
-        resumeTitle:'Professional experience',
-        resumeSubTitle:'Web developper',
-        period:'2007-2008',
-        adress:'Hospital Center of Soavinandriana',
-        tasks:[
-            {
-                task:'UI/UX'
-            },
-            {
-                task:'Template design'
-            },
-            {
-                task:'Interface integration'
-            },
-        ]
+                resumeSubTitle:'Internship',
+                period:'2021-2020',
+                adress:'Ampandrana, Antananarivo',
+                tasks:[
+                    {
+                        task:'Front end development'
+                    },
+                    {
+                        task:'Back end development'
+                    },
+                    {
+                        task:'Bug fixing'
+                    },
+                ]
+            }
+        ],
     }
 ]

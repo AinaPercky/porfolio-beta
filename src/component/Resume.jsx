@@ -36,17 +36,23 @@ export default function Resume() {
                     }
                 </div>
                 <div className='ResumeItemLeft w-1/2'>
+
                 {
-                    resumeExperience && resumeExperience.map((item,index) => (
-                        <ResumeTitle key={index} resumeTitle={item.resumeTitle}>
-                            <ResumeItem 
-                                resumeSubTitle={item.resumeSubTitle}
-                                period={item.period} 
-                                adress={item.adress}
-                                description={item.description} 
-                                tasks={item.tasks}/>
-                        </ResumeTitle>
-                    ))
+                        resumeExperience && resumeExperience.map((entry,index) => (
+                            <ResumeTitle key={index} resumeTitle={entry.resumeTitle}>
+                                {
+                                    entry.entries.map(item=>
+                                        <ResumeItem 
+                                            resumeSubTitle={item.resumeSubTitle}
+                                            period={item.period} 
+                                            adress={item.adress}
+                                            description={item.description} 
+                                            tasks={item.tasks}/>
+                                    )
+                                }
+                                
+                            </ResumeTitle>
+                        ))
                     }
                 </div>
             </div>
