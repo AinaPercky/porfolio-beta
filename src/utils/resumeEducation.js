@@ -32,7 +32,6 @@ export const resumeEducation=[
                 period:'2013-2016',
                 adress:'IST, Antananarivo',
                 description:'University degree in engineering and renewable energy',
-
             }
         ]
     }
