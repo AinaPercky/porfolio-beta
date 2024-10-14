@@ -3,6 +3,7 @@ import ServiceCard from './ServiceCard'
 import { dataSercice } from '../utils/services'
 
 
+
 export default function Services() {
     return (
         <section id="services" className="services section">
@@ -16,7 +17,9 @@ export default function Services() {
                     dataSercice.map((item)=>(
                         <ServiceCard
                             title={item.title} 
-                            content={item.content}>
+                            content={item.content}
+                            icon={item.icon}
+                            >
                         </ServiceCard>
                     ))
                 }
