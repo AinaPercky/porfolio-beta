@@ -10,12 +10,12 @@ export default function About() {
     <section id="about" className="about section ml-20 mr-20">
         <div className="container">
             <div className='cardAboutContainer grid grid-cols-2 gap-4'>
-                <div className='cardAboutContainerLeft'>
+                <div className='cardAboutContainerLeft animate_element'>
                     <AboutInfo></AboutInfo>
                     <AboutSkills></AboutSkills>
                     
                 </div>
-                <div className='cardAboutContainerRigth'>
+                <div className='cardAboutContainerRigth animate_element_2'>
                     <AboutContent></AboutContent>
                 </div>
             </div>

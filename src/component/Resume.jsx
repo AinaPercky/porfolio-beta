@@ -15,7 +15,7 @@ export default function Resume() {
             </div>
             {/* End Section Title */}
             <div className="flex aos-init aos-animate">
-                <div className='ResumeItemLeft w-1/2'>
+                <div className='ResumeItemLeft w-1/2 animate_element'>
                     {
                         resumeEducation && resumeEducation.map((entry,index) => (
                             <ResumeTitle key={index} resumeTitle={entry.resumeTitle}>
@@ -34,7 +34,7 @@ export default function Resume() {
                         ))
                     }
                 </div>
-                <div className='ResumeItemLeft w-1/2'>
+                <div className='ResumeItemLeft w-1/2 animate_element_2'>
 
                 {
                         resumeExperience && resumeExperience.map((entry,index) => (
