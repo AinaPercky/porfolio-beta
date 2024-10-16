@@ -253,12 +253,19 @@
         .navmenu .active:before {
         visibility: visible;
         width: 100%;
+        
         }
     
         .navmenu li:hover>a,
         .navmenu .active,
         .navmenu .active:focus {
         color: var(--nav-hover-color);
+        }
+
+        .navmenu li:hover>a,
+        .navmenu .active:focus {
+        color: var(--nav-hover-color);
+        opacity: 0.5;
         }
     
         .navmenu .dropdown ul {
