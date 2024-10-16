@@ -7,30 +7,25 @@ import About from './component/About'
 import Resume from './component/Resume'
 import Services from './component/Services'
 import aosObserver from './utils/aosObserver'
-import scollObserver from './utils/scrollObserver'
+import scrollObserver from './utils/scrollObserver'
 
-function App() {
+function App() {console.log
   const [count, setCount] = useState(0)
   useEffect(()=>{
     aosObserver();
-    scollObserver();
+    scrollObserver();
   }, [])
-
-    function increment(){
-      setCount((prev) =>{
-        return prev+1
-      });
-      setCount((prev) =>{
-        return prev+1
-      });
-    }
+  const handleScroll=()=>{
+    parts=(document.querySelectorAll('.part'));
+    console.log('parts',parts);
+  }
     return (
     <>
       <Header></Header>
-      <Home></Home>
-      <About></About>
-      <Resume></Resume>
-      <Services></Services>
+      <section className="part" id="Home"><Home ></Home></section>
+      <section className="part" id="About"> <About ></About></section>
+      <section className="part" id="Resume"><Resume ></Resume></section>
+      <section className="part" id="Services"><Services ></Services></section>
     </>
   )
 }

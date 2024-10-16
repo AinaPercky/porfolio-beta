@@ -1,9 +1,22 @@
-const scollObserver=()=>{
-    const element=document.querySelectorAll('.navChildMenu');
+const scrollObserver=()=>{
+    console.log("scrollObserve");
+    const element=document.querySelectorAll('.part');
+    console.log('elementObs',element);
     const observer=new IntersectionObserver((entries)=>{
         entries.forEach(entry=>{
-            if(entry.clicked){
-                console.log('clicked');
+            if(entry.isIntersecting){
+            const targetId=entry.target.getAttribute('id');
+            console.log('target antry',entry.target.getAttribute('id'));
+            const navChildMenu=document.querySelectorAll('.navChildMenu');
+            navChildMenu.forEach(item=>{
+                const navItem=item.children.item(0).innerHTML;
+                if(navItem!=targetId){
+                    item.children.item(0).classList.remove('active');
+                }
+                else{
+                    item.children.item(0).classList.add('active');
+                }
+            })
             }
         })
     })
@@ -11,17 +24,5 @@ const scollObserver=()=>{
     element.forEach(item => {
         observer.observe(item);
     });
-    // // observer.observe(element);
-    // const element2=document.querySelectorAll('.animate_element_2');
-    // const observer2=new IntersectionObserver((entries)=>{
-    //     entries.forEach(entry=>{
-    //         if(entry.isIntersecting){
-    //         entry.target.classList.add('animate_2')
-    //         }
-    //     })
-    // })
-    // element2.forEach(item => {
-    //     observer2.observe(item);
-    // });
 }
-export default scollObserver    
+export default scrollObserver
