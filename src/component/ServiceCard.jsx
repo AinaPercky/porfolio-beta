@@ -10,7 +10,7 @@ export default function ServiceCard(props) {
                 {/* face avant*/}
                 
                 <div className="service-item absolute w-full h-full backface-hidden">
-                    <div className='service-item'>
+                    <div className=''>
                         <div className="icon">
                             <Icon/>
                         </div>
@@ -20,7 +20,6 @@ export default function ServiceCard(props) {
                         <p>{props.content}</p>
                     </div>
                         
-                
                 </div>
                 {/* face arrière*/}
                 <div className=" absolute w-full h-full backface-hidden rotate-y-180">
