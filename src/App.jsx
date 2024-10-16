@@ -7,12 +7,15 @@ import About from './component/About'
 import Resume from './component/Resume'
 import Services from './component/Services'
 import aosObserver from './utils/aosObserver'
+import scollObserver from './utils/scrollObserver'
 
 function App() {
   const [count, setCount] = useState(0)
-  useEffect(aosObserver, [])
+  useEffect(()=>{
+    aosObserver();
+    scollObserver();
+  }, [])
 
-  
     function increment(){
       setCount((prev) =>{
         return prev+1
