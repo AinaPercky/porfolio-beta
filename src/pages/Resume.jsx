@@ -1,6 +1,6 @@
 import React from 'react'
-import ResumeTitle from './ResumeTitle'
-import ResumeItem from './ResumeItem'
+import ResumeTitle from '../component/ResumeTitle'
+import ResumeItem from '../component/ResumeItem'
 import { resumeEducation } from '../utils/resumeEducation'
 import { resumeExperience } from '../utils/resumeExperience'
 

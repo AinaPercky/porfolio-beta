@@ -2,7 +2,7 @@ import React from 'react'
 import { TypeAnimation } from 'react-type-animation'
 
 
-export const Home = () => {
+export default function Home () {
     return (
         <div>
                 <section id="hero" className="hero section dark-background">

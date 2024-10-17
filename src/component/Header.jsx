@@ -19,16 +19,16 @@ export default function Header() {
     return (
         <header id="header" className="header fixed top-0 w-full overflow-hidden">
             <div className="flex items-center justify-between mx-5 ">
-                <a href="index.html" className="logo flex items-center">
+                <a href="/" className="logo flex items-center">
                     <img src="assets/img/logo.png" alt=""/>
                     <h1 className="sitename">Percky</h1>
                 </a>
                 <nav id="navmenu" className="navmenu">
                     <ul>
-                        <li onClick={handleNavigation} className='navChildMenu active'><a href="#hero" className="active">Home</a></li>
-                        <li onClick={handleNavigation} className='navChildMenu'><a href="#about">About</a></li>
-                        <li onClick={handleNavigation} className='navChildMenu'><a href="#resume">Resume</a></li>
-                        <li onClick={handleNavigation} className='navChildMenu'><a href="#services">Services</a></li>
+                        <li onClick={handleNavigation} className='navChildMenu active'><a href="/" className="active">Home</a></li>
+                        <li onClick={handleNavigation} className='navChildMenu'><a href="/about/me">About</a></li>
+                        <li onClick={handleNavigation} className='navChildMenu'><a href="/resume">Resume</a></li>
+                        <li onClick={handleNavigation} className='navChildMenu'><a href="/services">Services</a></li>
                         {/* <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li> */}
                     </ul>
