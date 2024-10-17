@@ -6,9 +6,8 @@ import { resumeExperience } from '../utils/resumeExperience'
 
 
 export default function Resume() {
-    console.log(resumeEducation)
     return (    
-        <section id="resume" className="resume section pl-20 pr-20">
+        <section id="resume" className="resume px-20">
             {/* Section Title */}
             <div className="container section-title aos-init aos-animate " data-aos="fade-up">
                 <h2>Resume</h2>
