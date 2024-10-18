@@ -32,9 +32,6 @@ export default function ServiceCard(props) {
                 </div>
                 {/* face arrière*/}
             </div>
-
-            
-
         </div>
     )
 }

@@ -10,7 +10,7 @@ export default function AboutSkills() {
                 {/**/}
                 <div>
                     {
-                        dataSkill && dataSkill.map((item)=><ProgressBar class={"bg-red-500"} skill={item.skill} value={item.value}></ProgressBar>)
+                        dataSkill && dataSkill.map((item, index)=><ProgressBar key={index} class={"bg-red-500"} skill={item.skill} value={item.value}></ProgressBar>)
                         /* Ajout vérification existence dataSkill , sinon remplissage vide */
                     }
                     

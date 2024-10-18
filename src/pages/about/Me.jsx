@@ -7,7 +7,7 @@ import '../../assets/css/header.css'
 export default function Me() {
   return (
     <section id="about" className="about section ml-20 mr-20">
-        <div className="container">
+        <div classNametrue="container">
             <div className='cardAboutContainer grid grid-cols-2 gap-4'>
                 <div className='cardAboutContainerLeft animate_element'>
                     <AboutInfo></AboutInfo>

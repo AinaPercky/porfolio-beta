@@ -7,11 +7,16 @@ import Info from "../pages/about/Info";
 import Resume from "../pages/Resume"
 import Services from "../pages/Services";
 import App from "../App";
+import Login from "../pages/Login";
+import ProtectLogin from "./ProtectLogin";
 
 export const routes = [
   {
     path: "/",
-    element: <App/>,
+    element: 
+      <ProtectLogin>
+        <App/>
+      </ProtectLogin>,
     children: [
       {
         path: "/",
@@ -41,5 +46,9 @@ export const routes = [
       },
     ],
   },
+  {
+    path:'/login',
+    element: <Login/>
+  }
 ];
 

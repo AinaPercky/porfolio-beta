@@ -10,7 +10,7 @@ export default function ResumeItem(props) {
                 {props.description?<p>{props.description}</p>:null}
                 {props.tasks?
                     <ul className='list-disc'>
-                    {props.tasks.map((item)=><li>{item.task}</li>)}
+                    {props.tasks.map((item,index)=><li key={index}>{item.task}</li>)}
                 </ul>:null
                 }
             </div>

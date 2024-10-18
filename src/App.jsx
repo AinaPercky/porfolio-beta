@@ -7,10 +7,6 @@ import scrollObserver from './utils/scrollObserver'
 import { Outlet } from 'react-router-dom'
 
 function App() {console.log
-  useEffect(()=>{
-    aosObserver();
-    scrollObserver();
-  }, [])
     return (
     <>
       <Header></Header>
