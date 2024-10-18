@@ -12,7 +12,6 @@ export default function Me() {
                 <div className='cardAboutContainerLeft animate_element'>
                     <AboutInfo></AboutInfo>
                     <AboutSkills></AboutSkills>
-                    
                 </div>
                 <div className='cardAboutContainerRigth animate_element_2'>
                     <AboutContent></AboutContent>
