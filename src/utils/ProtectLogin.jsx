@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function ProtectLogin({children}) {
-    const [isLogged, setIsLogged] = useState(false)
-    const navigate=useNavigate()
-    const logged = false
+    const navigate=useNavigate();
     useEffect(() => {
-        if(!isLogged){
+        const userLocal=JSON.parse(localStorage.getItem('user'));
+        console.log("userloc",userLocal);
+        if(!userLocal){
             return navigate ('/login') 
         }
-    }, [isLogged])
+    }, [])
 
     return children
 }
