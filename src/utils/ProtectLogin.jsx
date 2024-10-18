@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Login from '../pages/Login'
 import { useNavigate } from 'react-router-dom'
 
 export default function ProtectLogin({children}) {
