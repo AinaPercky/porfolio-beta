@@ -1,13 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import dataLogin from './dataLogin';
 
 export default function ProtectLogin({children}) {
     const navigate=useNavigate();
     useEffect(() => {
         const userLocal=JSON.parse(localStorage.getItem('user'));
+        let isConnected=false;
         console.log("userloc",userLocal);
         if(!userLocal){
-            return navigate ('/login') 
+            return navigate ('/login');
+        }
+        else{
+            dataLogin.map((item)=>{
+                if(item.userName==userLocal.username && item.password==userLocal.password){
+                    isConnected=true;
+                }
+            })
+            if(isConnected===false){
+                return navigate('/login');
+            }
         }
     }, [])
 
