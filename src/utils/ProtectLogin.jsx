@@ -12,16 +12,12 @@ export default function ProtectLogin({children}) {
             return navigate ('/login');
         }
         else{
-            dataLogin.map((item)=>{
-                if(item.userName==userLocal.username && item.password==userLocal.password){
-                    isConnected=true;
-                }
-            })
-            if(isConnected===false){
+            const currentUser = dataLogin.find(item=>item.userName==userLocal.username && item.password==userLocal.password)
+            console.log('currentUser',currentUser);
+            if(!currentUser){
                 return navigate('/login');
             }
         }
     }, [])
-
     return children
 }

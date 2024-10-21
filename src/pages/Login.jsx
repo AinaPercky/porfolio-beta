@@ -1,5 +1,6 @@
     import React, { useState } from "react";
     import { useNavigate } from 'react-router-dom'
+    import dataLogin from "../utils/dataLogin";
 
 
     export default function Login() {
@@ -15,8 +16,15 @@
         // loggedUser.name=name;
         // loggedUser.password=password;
         // setUser(loggedUser);
-        localStorage.setItem("user", JSON.stringify(user));
-        navigate ('/');
+        const userFound = dataLogin.find(item=>item.userName==user.username && item.password==user.password)
+        if(!userFound){
+            alert("mot de passe incorrect");
+            setUser({ username:'', password:'' })
+        }
+        else{
+            localStorage.setItem("user", JSON.stringify(user));
+            navigate ('/');
+        }
     }; // localStorage.setItem('user',User);
     return (
         <div className="bg-gray-50 font-[sans-serif]">
@@ -35,6 +43,7 @@
                     <input
                         name="username"
                         type="text"
+                        value={user.username}
                         onChange={(e) =>
                         setUser({ ...user, username: e.target.value })
                         }
@@ -52,6 +61,7 @@
                     <input
                         name="password"
                         type="password"
+                        value={user.password}
                         onChange={(e) =>
                         setUser({ ...user, password: e.target.value })
                         }
@@ -65,7 +75,7 @@
                 <div className="!mt-8">
                     <button
                     type="submit"
-                    onClick={handleLogin}
+                    onClick={(e) => handleLogin(e)}
                     className="w-full py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
                     >
                     Connect
