@@ -1,31 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import dataLogin from '../utils/dataLogin';
+import handleLogin from '../utils/handleLogin';
 
 export default function Login() {
-	const navigate = useNavigate();
 	const [user, setUser] = useState({
 		username: '',
 		password: '',
 	});
-	const handleLogin = (e) => {
-		e.preventDefault();
-		console.log(user);
-		// const loggedUser={};
-		// loggedUser.name=name;
-		// loggedUser.password=password;
-		// setUser(loggedUser);
-		const userFound = dataLogin.find(
-			(item) => item.userName == user.username && item.password == user.password
-		);
-		if (!userFound) {
-			alert('mot de passe incorrect');
-			setUser({ username: '', password: '' });
-		} else {
-			localStorage.setItem('user', JSON.stringify(user));
-			navigate('/');
-		}
-	}; // localStorage.setItem('user',User);
 	return (
 		<div className='bg-gray-50 font-[sans-serif]'>
 			<div className="min-h-screen flex             // localStorage.setItem('user',User);flex-col items-center justify-center py-6 px-4">
