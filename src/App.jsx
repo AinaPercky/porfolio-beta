@@ -1,16 +1,20 @@
-import Header from './component/Header';
-import { Outlet } from 'react-router-dom';
+import { useEffect, useState } from 'react'
 
-function App() {
-	console.log;
-	return (
-		<>
-			<Header></Header>
-			<section>
-				<Outlet />
-			</section>
-		</>
-	);
+import Header from './component/Header'
+
+import aosObserver from './utils/aosObserver'
+import scrollObserver from './utils/scrollObserver'
+import { Outlet } from 'react-router-dom'
+
+function App() {console.log
+    return (
+    <>
+      <Header></Header>
+        <section>
+          <Outlet/>
+        </section>
+    </>
+  )
 }
 
-export default App;
+export default App
