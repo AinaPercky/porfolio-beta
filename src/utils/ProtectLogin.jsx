@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import dataLogin from './dataLogin';
+import { Authenticate } from '../api/authenticate';
 
 export default function ProtectLogin({children}) {
     const navigate=useNavigate();
     useEffect(() => {
-        const userLocal=JSON.parse(localStorage.getItem('user'));
+        const token=JSON.parse(localStorage.getItem('token'));
         let isConnected=false;
-        console.log("userloc",userLocal);
-        if(!userLocal){
+        console.log("userloc",token);
+        if(!token){
             return navigate ('/login');
         }
         else{
-            const currentUser = dataLogin.find(item=>item.userName==userLocal.username && item.password==userLocal.password)
-            console.log('currentUser',currentUser);
-            if(!currentUser){
+            Authenticate(token)
+            .then((res)=>{
+                console.log('currentUser',res);
+            })
+            .catch((err)=>{
+                console.log("erreur Protectlogin",err);
                 return navigate('/login');
-            }
+            })
         }
     }, [])
     return children

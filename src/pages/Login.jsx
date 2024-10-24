@@ -1,40 +1,36 @@
-    import React, { useState } from "react";
-    import { useNavigate } from 'react-router-dom'
-    import dataLogin from "../utils/dataLogin";
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
+import { LoginApi } from "../api/login";
 
-
-    export default function Login() {
-    const navigate=useNavigate();
-    const [user, setUser] = useState({
-        username: "",
-        password: "",
-    });
-    const handleLogin = (e) => {
-        e.preventDefault();
-        console.log(user);
-        // const loggedUser={};
-        // loggedUser.name=name;
-        // loggedUser.password=password;
-        // setUser(loggedUser);
-        const userFound = dataLogin.find(item=>item.userName==user.username && item.password==user.password)
-        if(!userFound){
-            alert("mot de passe incorrect");
-            setUser({ username:'', password:'' })
-        }
-        else{
-            localStorage.setItem("user", JSON.stringify(user));
-            navigate ('/');
-        }
-    }; // localStorage.setItem('user',User);
-    return (
-        <div className="bg-gray-50 font-[sans-serif]">
-        <div className="min-h-screen flex             // localStorage.setItem('user',User);flex-col items-center justify-center py-6 px-4">
-            <div className="max-w-md w-full">
-            <div className="p-8 rounded-2xl bg-white shadow">
-                <h2 className="text-gray-800 text-center text-2xl font-bold">
-                Login
-                </h2>
-                <form className="mt-8 space-y-4">
+export default function Login() {
+const navigate=useNavigate();
+const [user, setUser] = useState({
+    username: "",
+    password: "",
+});
+const  handleLogin = async (e) => {
+    e.preventDefault();
+    console.log(user);
+    await LoginApi(user)
+    .then((res)=>{
+        console.log('res from bach',res);
+        localStorage.setItem("token", JSON.stringify(res.token));
+        navigate ('/');
+    })
+    .catch((err)=>{
+        alert("mot de passe incorrect");
+        setUser({ username:'', password:'' })
+    })
+}; 
+return (
+    <div className="bg-gray-50 font-[sans-serif]">
+    <div className="min-h-screen flex flex-col items-center justify-center py-6 px-4">
+        <div className="max-w-md w-full">
+        <div className="p-8 rounded-2xl bg-white shadow">
+            <h2 className="text-gray-800 text-center text-2xl font-bold">
+            Login
+            </h2>
+            <form className="mt-8 space-y-4">
                 <div>
                     <label className="text-gray-800 text-sm mb-2 block">
                     User name
@@ -71,7 +67,6 @@
                     />
                     </div>
                 </div>
-
                 <div className="!mt-8">
                     <button
                     type="submit"
@@ -81,19 +76,10 @@
                     Connect
                     </button>
                 </div>
-                {/* <p className="text-gray-800 text-sm !mt-8 text-center">
-                        Don't have an account?{" "}
-                        <a
-                        href="javascript:void(0);"
-                        className="text-blue-600 hover:underline ml-1 whitespace-nowrap font-semibold"
-                        >
-                        Register here
-                        </a>
-                    </p> */}
-                </form>
-            </div>
-            </div>
+            </form>
         </div>
         </div>
-    );
-    }
+    </div>
+    </div>
+);
+}
