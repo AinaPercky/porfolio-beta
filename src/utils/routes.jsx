@@ -9,6 +9,8 @@ import Services from "../pages/Services";
 import App from "../App";
 import Login from "../pages/Login";
 import ProtectLogin from "./ProtectLogin";
+import { ContactUs } from "../component/ContactUs";
+import { Appointment } from "../component/Appointment";
 
 export const routes = [
   {
@@ -43,6 +45,14 @@ export const routes = [
       {
         path: "/services",
         element: <Services />,
+      },
+      {
+        path: "/contactUs",
+        element: <ContactUs/>,
+      },
+      {
+        path: "/appointment",
+        element: <Appointment/>,
       },
     ],
   },

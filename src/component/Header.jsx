@@ -32,6 +32,16 @@ export default function Header() {
                             Services
                         </NavLink>
                     </li>
+                    <li className="navChildMenu">
+                        <NavLink to="/contactUs" className={({isActive})=> isActive ? "active":""}>
+                            Contact Us
+                        </NavLink>
+                    </li>
+                    <li className="navChildMenu">
+                        <NavLink to="/appointment" className={({isActive})=> isActive ? "active":""}>
+                            Appointment
+                        </NavLink>
+                    </li>
                     {/* <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li> */}
                 </ul>
